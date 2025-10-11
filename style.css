@@ -1,112 +1,61 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
 }
-body,html{
-    height: 100%;
-    width: 100%;
+
+html, body {
+  height: 100%;
+  width: 100%;
 }
-#main{
-    height: 100vh;
-    width: 100%;
-   background: linear-gradient(to bottom right, #FFAFBD, #FFC3A0);
-   padding: 20px 20px;
-   display: flex;
-   flex-wrap: wrap;
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(red, yellow, black);
+  gap: 1vw;
+  perspective: 1000px;
+  overflow: hidden;
 }
-.card{
-    height: 250px;
-    width: 200px;
-    background: white;
-    padding: 5px 5px;
-    margin: 0px 10px;
-    box-shadow: 10px 10px 10px black;
-    border-radius: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: column;
-    
+main section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  flex-grow: 1;
+  background-color: rgb(74, 255, 192);
+  box-shadow: 5px 5px 5px rgb(37, 35, 35);
+  background-position: center;
+  background-size: cover;
+  border-radius: 1vw;
+  transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
 }
-.card img{
-    height: 100px;
-    width: 100px;
-    object-fit: cover;
-    border-radius: 10%;
-    box-shadow: #e9ed6fbc 10px 10px 50px;
+main section h1 {
+  background: linear-gradient(90deg, #218bff 0%, #a770ef 50%, #f6d365 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
 }
-.card h1{
-    font-weight: 200px;
-    text-decoration: wavy;
-    font-size: 25px;
+main section:hover {
+  flex-grow: 3;
+  transform: rotateX(20deg);
 }
-.card h3{
-    font-weight: 100px;
-    font-size: 15px;
-    text-align: center;
-    font-weight: 100px;
-    font-style: italic;
+main section:nth-child(1) {
+  background-image: url(https://i.pinimg.com/736x/cf/9b/c7/cf9bc7e5a09c5e8371b2a310331ae59a.jpg);
 }
-.card button{
-    padding: 10px 20px;
-    border: none;
-    outline: none;
-    background: linear-gradient(to bottom right, #FFAFBD, #FFC3A0);
-    box-shadow: 5px 5px 10px black;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
+main section:nth-child(2) {
+  background-image: url(https://i.pinimg.com/736x/16/12/fd/1612fdcd9ef90d49c626b0a18e36371d.jpg);
 }
-.card button:hover{
-    box-shadow: none;
-    transform: scale(0.98);
-    background: linear-gradient( #FFC3A0, #1f76e1);
-    color: white;
+main section:nth-child(3) {
+  background-image: url(https://i.pinimg.com/1200x/0e/f4/ed/0ef4ed23812441fb699274eca631c2d4.jpg);
 }
-.card:hover{
-    transform: scale(1.05);
-    box-shadow: 15px 15px 20px black;
-    background: linear-gradient(to bottom right, #FFAFBD, #FFC3A0);
-    transition: 0.3s;
+main section:nth-child(4) {
+  background-image: url(https://i.pinimg.com/736x/4d/2b/d6/4d2bd65582cbc484ad5bc2dee9d46d6b.jpg);
 }
-.card img:hover{
-    transform: scale(1.1);
-    box-shadow: #e9ed6fbc 15px 15px 50px;
-    transition: 0.3s;
-    width: 100%;
-    object-fit: cover;
-    background: transparent;
-}
-#nav{
-    height: 10%;
-    width: 100%;
-    background:transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-#nav h1{
-    font-size: 30px;
-    font-weight: bold;
-    color: white;
-    text-shadow: 2px 2px 5px black;
-    position: absolute;
-    
-}
-#nav h1:hover{
-    color: #1f76e1;
-    transition: 0.3s;
-}
-.card h1:hover{
-    color: #f8f8f8;
-    
-    transition: 0.3s;
-}
-#main:hover{
-    transition: 0.3s;
-    background: linear-gradient(to bottom right, #1f76e1, #21d4fd);
-}
+main section:nth-child(5) {
+  background-image: url(https://i.pinimg.com/736x/e0/de/d3/e0ded391d7de66329e90051168394a45.jpg);
+}/*# sourceMappingURL=Style.css.map */
