@@ -10,19 +10,19 @@ html,body{
 }
 
 main{
-    @include D-center();
+    
     height: 100vh;
     width: 100vw;
     background: linear-gradient(red,yellow,black);
-    
+    @include D-center();
     gap: 1vw;
     perspective: 1000px;
-    overflow: hidden;
+    
     section{
-        @include flex-direction-y();
         
         height: 100%;
         flex-grow: 1;
+        @include flex-direction-y();
         background-color: rgb(74, 255, 192);
         box-shadow: 5px 5px 5px rgb(37, 35, 35);
         background-position: center;
@@ -36,7 +36,8 @@ main{
         }
     }
     section:hover{
-        flex-grow: 3;
+        flex-grow: 6;
+        cursor: pointer;
         transform: rotateX(20deg);
     }
     section:nth-child(1){
