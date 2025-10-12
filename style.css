@@ -25,13 +25,31 @@ html, body {
   grid-template-rows: 0.1fr 1fr 1fr;
   grid-template-areas: "nav-l nav-m nav-m nav-r" "center-l center-l center-r center-r" "bottom-l bottom-l bottom-rl bottom-r";
   gap: 1vw;
-  padding: 1vw 1vw;
+  padding: 1vh 1vw;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  perspective: 1000px;
 }
 .hero main .nav-l {
   grid-area: nav-l;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.hero main .nav-l h1 {
+  background-image: url(https://www.thisiscolossal.com/wp-content/uploads/2024/01/spherewave.gif);
+  background-position: center;
+  background-size: cover;
+  border-radius: 1vw;
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.hero main .nav-l h1:hover {
+  background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_632/45cd1319299489.562d80dfa5913.gif);
+  background-position: center;
+  background-size: cover;
+  border-radius: 1vw;
 }
 .hero main .nav-l .icon {
   flex-grow: 0.5;
@@ -57,6 +75,11 @@ html, body {
   text-decoration: none;
   font-size: 1.2vw;
   font-weight: 300px;
+  transition: all 0.7s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.hero main .nav-m a:hover {
+  color: blue;
+  font-size: 2vw;
 }
 .hero main .nav-r {
   grid-area: nav-r;
@@ -71,6 +94,13 @@ html, body {
   text-decoration: none;
   font-size: 2vw;
   font-weight: 300px;
+  background-image: url(https://www.thisiscolossal.com/wp-content/uploads/2024/01/spherewave.gif);
+  background-position: center;
+  background-size: cover;
+  border-radius: 1vw;
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
 }
 .hero main .nav-r button {
   background-color: black;
@@ -85,6 +115,11 @@ html, body {
   background-color: white;
   border-radius: 50%;
   color: black;
+  transition: all ease 0.7s;
+}
+.hero main .nav-r button i:hover {
+  font-size: 3vw;
+  cursor: pointer;
 }
 .hero main .center-l {
   grid-area: center-l;
@@ -98,6 +133,15 @@ html, body {
   height: 4vw;
   width: 10vw;
   border-radius: 3vw;
+  transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.hero main .center-l button:hover {
+  background-image: url(https://thegiftclub.io/wp-content/uploads/2023/06/Article-thumbnail-10.gif);
+  background-position: center;
+  background-size: cover;
+  border-radius: 1vw;
+  cursor: pointer;
+  transform: scale(2);
 }
 .hero main .center-l h1 {
   background-image: url(https://www.gifcen.com/wp-content/uploads/2023/07/neon-gif-7.gif);
@@ -116,6 +160,12 @@ html, body {
   background-position: center;
   background-size: cover;
   border-radius: 1vw;
+  transition: all ease 0.7s;
+}
+.hero main .center-r:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
 }
 .hero main .bottom-l {
   grid-area: bottom-l;
@@ -162,6 +212,13 @@ html, body {
   justify-content: space-between;
   padding: 1vw 1vw;
 }
+.hero main .bottom-l .loweer .bottom a {
+  transition: all ease 0.7s;
+}
+.hero main .bottom-l .loweer .bottom a:hover {
+  color: blue;
+  font-size: 3vw;
+}
 .hero main .bottom-rl {
   grid-area: bottom-rl;
   background-color: violet;
@@ -169,6 +226,12 @@ html, body {
   background-position: center;
   background-size: cover;
   border-radius: 1vw;
+  transition: all ease 0.7s;
+}
+.hero main .bottom-rl:hover {
+  transform: rotateY(31deg);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  cursor: pointer;
 }
 .hero main .bottom-r {
   grid-area: bottom-r;
@@ -177,4 +240,10 @@ html, body {
   background-position: center;
   background-size: cover;
   border-radius: 1vw;
+  transition: all ease 0.7s;
+}
+.hero main .bottom-r:hover {
+  transform: rotateY(-31deg);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  cursor: pointer;
 }/*# sourceMappingURL=Style.css.map */

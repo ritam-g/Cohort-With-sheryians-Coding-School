@@ -38,11 +38,26 @@ main{
                          "center-l center-l center-r center-r"
                          "bottom-l bottom-l bottom-rl bottom-r";
     gap: 1vw;         
-    padding: 1vw 1vw;           
+    padding: 1vh 1vw;   
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    perspective: 1000px;
+        
 
 .nav-l { 
     grid-area: nav-l; 
     @include flex-center();
+    h1{
+        background-image: url(https://www.thisiscolossal.com/wp-content/uploads/2024/01/spherewave.gif);
+        @include backgroun-img-fix();
+        background-clip: text;
+        color: transparent;
+        transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        
+    }
+    h1:hover{
+        background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_632/45cd1319299489.562d80dfa5913.gif);
+        @include backgroun-img-fix();
+    }
     .icon{
         flex-grow: 0.5;
         object-fit: cover;
@@ -63,6 +78,12 @@ main{
         text-decoration: none;
         font-size: 1.2vw;
         font-weight: 300px;
+        transition: all 0.7s cubic-bezier(0.215, 0.610, 0.355, 1);
+    }
+    a:hover{
+        color: blue;
+        font-size: 2vw;
+
     }
  }
 .nav-r { grid-area: nav-r; 
@@ -74,6 +95,11 @@ main{
         text-decoration: none;
         font-size: 2vw;
         font-weight: 300px;
+         background-image: url(https://www.thisiscolossal.com/wp-content/uploads/2024/01/spherewave.gif);
+        @include backgroun-img-fix();
+        background-clip: text;
+        color: transparent;
+       
     }
     button{
         background-color: black;
@@ -85,6 +111,11 @@ main{
             background-color: white;
             border-radius: 50%;
             color: black;
+            transition: all ease 0.7s;
+        }
+        i:hover{
+            font-size: 3vw;
+            cursor: pointer;
         }
     }
  }
@@ -106,7 +137,14 @@ main{
         height: 4vw;
         width: 10vw;
         border-radius: 3vw;
+        transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
         
+    }
+    button:hover{
+        background-image: url(https://thegiftclub.io/wp-content/uploads/2023/06/Article-thumbnail-10.gif);
+        @include backgroun-img-fix();
+        cursor: pointer;
+        transform: scale(2);
     }
     h1{
         background-image: url(https://www.gifcen.com/wp-content/uploads/2023/07/neon-gif-7.gif);
@@ -117,11 +155,19 @@ main{
     }
     
 }
-.center-r { grid-area: center-r; 
+.center-r { 
+    grid-area: center-r; 
     background-color: blue;
     background-image: url(https://mbilal412.github.io/cohort-2.0-projects/Aicrea/asset/img1.png);
     @include backgroun-img-fix();
+    transition: all ease 0.7s;
     
+ }
+ .center-r:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+
  }
 .bottom-l { grid-area: bottom-l; 
     
@@ -154,26 +200,49 @@ main{
                 font-size: 1vw;
                 font-weight: 700;
             }
+            
         }
         a{
             text-decoration: none;
             color: black;
             font-size: 2vw;
         }
+        
         .bottom{
             @include flex-center();
             justify-content: space-between;
             padding: 1vw 1vw;
+            a{
+                transition: all ease 0.7s;
+            }
+            a:hover{
+            color: blue;
+            font-size: 3vw;
+
+            }
         }
     }
 }
 .bottom-rl { grid-area: bottom-rl; background-color: violet;
     background-image: url(https://mbilal412.github.io/cohort-2.0-projects/Aicrea/asset/img2.png);
     @include backgroun-img-fix();
+    transition: all ease 0.7s;
+}
+.bottom-rl:hover{
+    transform: rotateY(31deg);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+
 }
 .bottom-r { grid-area: bottom-r; background-color: rgb(34, 128, 175); 
     background-image: url(https://mbilal412.github.io/cohort-2.0-projects/Aicrea/asset/img3.png);
     @include backgroun-img-fix();
+    transition: all ease 0.7s;
+}
+.bottom-r:hover{
+    transform: rotateY(-31deg);
+     box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
 }
 
 }
