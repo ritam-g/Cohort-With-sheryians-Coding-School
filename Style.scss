@@ -7,243 +7,198 @@ html,body{
     height: 100%;
     width: 100%;
 }
-@mixin flex-center(){
+@mixin flex-center{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 @mixin flex-column(){
     display: flex;
-    
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
 }
-@mixin backgroun-img-fix(){
-    background-position: center;
-    background-size: cover;
-    border-radius: 1vw;
+@mixin img-cover(){
+    object-fit: cover;
 }
-.hero{
-    height: 100vh;
-    width: 100vw;
-    @include flex-center();
-    padding: 0vw 10vw;
-    
 main{
     height: 100%;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.1fr 1fr 1fr;
-    grid-template-areas: "nav-l nav-m nav-m nav-r"
-                         "center-l center-l center-r center-r"
-                         "bottom-l bottom-l bottom-rl bottom-r";
-    gap: 1vw;         
-    padding: 1vh 1vw;   
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-    perspective: 1000px;
+    background-color: white;
+    
+    .hero{
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "hero-l hero-r";
+        gap: 1vw;
+        padding: 1vh 1vw;
+        // Add padding-top to account for fixed navbar
+        padding-top: calc(10vh + 1vh); // navbar height + original padding
         
+        //navbar - now fixed
+        .nav { 
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 10vh; // Set explicit height
+                background-color: white; // Add background so content doesn't show through
+                z-index: 1000; // Keep it above other content
+                display: grid;
+                grid-template-columns: 0.5fr 1fr 0.5fr;
+                grid-template-rows: 1fr;
+                grid-template-areas: "nav-l nav-c nav-r";
+                gap: 1vw;
+                padding: 1vh 1vw;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1); // Optional: adds subtle shadow
+                border-radius: 1vw;
+                .nav-l { 
+                    grid-area: nav-l; 
+                    @include flex-center();
+                    .svg{
+                          height: 100%;
+                          flex-grow: 0.4;
+                          padding: 1vh 1vw; 
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          img{
+                            height: 70%;
+                            width: 70%;
+                            @include img-cover();
+                            border-radius: 50%;
+                          }
+                    }
+                }
+                .nav-c { grid-area: nav-c; 
+                    @include flex-center();
+                    gap: 1.7vw;
+                    a{
+                        text-decoration: none;
+                        color: rgb(0, 0, 0);
+                        font-size: 1.1vw;
+                    }
+                }
+                .nav-r { 
+                    grid-area: nav-r; 
+                    @include flex-center();
+                    button{
+                        background-color: blue;
+                        color: white;
+                        font-size: 2vw;
+                        padding: 1vh 1vw;
+                        border-radius: 20px;
+                        cursor: pointer;
+                        border: none;
+                    }
+                 }
+         }
+        .hero-l { 
+            grid-area: hero-l; 
+            background-color: lightblue;
+            @include flex-column();
+            align-items: start;
+            border-radius: 1vw;
+            gap: 3vw;
+            h1{
+                font-size: 5vw;
+            }
+            P{
+                color: #F0F1F3;
+            }
+            .bottom{
+                
+                button{
+                        background-color: blue;
+                        color: white;
+                        font-size: 2vw;
+                        padding: 1vh 1vw;
+                        border-radius: 20px;
+                        cursor: pointer;
+                        border: none;
+                    }
+            }
 
-.nav-l { 
-    grid-area: nav-l; 
-    @include flex-center();
-    h1{
-        background-image: url(https://www.thisiscolossal.com/wp-content/uploads/2024/01/spherewave.gif);
-        @include backgroun-img-fix();
-        background-clip: text;
-        color: transparent;
-        transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+         }
+        .hero-r { 
+            grid-area: hero-r; 
+            background-color: lightgreen;
+            border-radius: 1vw;
+           
+            overflow: hidden;
+            video{
+                height: 100%;
+                width: 100%;
+                @include img-cover();
+                border-radius: 1vw;
+            }
+         } 
+    }
+    .center{
+        height: 25vh;
+        width: 100vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "first secend third fourth";
         
-    }
-    h1:hover{
-        background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_632/45cd1319299489.562d80dfa5913.gif);
-        @include backgroun-img-fix();
-    }
-    .icon{
-        flex-grow: 0.5;
-        object-fit: cover;
-        img{
-            height: 100%;
-            width: 10vw;
-            object-fit: cover;
+        .first { 
+            grid-area: first; 
+            @include flex-column();
+            overflow: hidden;
+            gap: 1vh;
+            h1{
+                font-size: 5vw;
+            }
+            h5{
+                color: #9F9F9F;
+            }
+         }
+        .secend { 
+            grid-area: secend;
+             @include flex-column();
+            overflow: hidden;
+            gap: 1vh;
+            h1{
+                font-size: 5vw;
+            }
+            h5{
+                color: #9F9F9F;
+            }
+             
+             }
+        .third {
+            grid-area: third; 
+            @include flex-column();
+            overflow: hidden;
+            gap: 1vh;
+            h1{
+                font-size: 5vw;
+            }
+            h5{
+                color: #9F9F9F;
+            }
+             
+             }
+        .fourth { 
+            grid-area: fourth; 
+            @include flex-column();
+            
+            overflow: hidden;
+            gap: 1vh;
+            h1{
+                font-size: 5vw;
+            }
+            h5{
+                color: #9F9F9F;
+            }
         }
-    } 
-}
-.nav-m { grid-area: nav-m; 
-    
-    @include flex-center();
-    gap: 2vw;
-    overflow: auto;
-    a{
-        color: black;
-        text-decoration: none;
-        font-size: 1.2vw;
-        font-weight: 300px;
-        transition: all 0.7s cubic-bezier(0.215, 0.610, 0.355, 1);
-    }
-    a:hover{
-        color: blue;
-        font-size: 2vw;
-
-    }
- }
-.nav-r { grid-area: nav-r; 
-    @include flex-center();
-    gap: 2vw;
-    font-size: 2vw;
-    a{
-        color: black;
-        text-decoration: none;
-        font-size: 2vw;
-        font-weight: 300px;
-         background-image: url(https://www.thisiscolossal.com/wp-content/uploads/2024/01/spherewave.gif);
-        @include backgroun-img-fix();
-        background-clip: text;
-        color: transparent;
-       
-    }
-    button{
-        background-color: black;
-        color: white;
-        @include flex-center();
-        font-size: 2vw;
-        gap: 2vw;
-        i{
-            background-color: white;
-            border-radius: 50%;
-            color: black;
-            transition: all ease 0.7s;
-        }
-        i:hover{
-            font-size: 3vw;
-            cursor: pointer;
-        }
-    }
- }
-.center-l { 
-    grid-area: center-l; 
-    display: flex; 
-    flex-direction: column;
-    gap: 3vw;
-    button{
-        background: linear-gradient(135deg,
-  #ffb6c1 0%,    /* soft pink */
-  #ff9a9e 20%,   /* pinkish orange */
-  #fad0c4 40%,   /* peach */
-  #a1c4fd 60%,   /* sky blue */
-  #c2e9fb 80%,   /* light aqua */
-  #d4a5ff 100%   /* lavender purple */
-);
-        color: transparent;
-        height: 4vw;
-        width: 10vw;
-        border-radius: 3vw;
-        transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
-        
-    }
-    button:hover{
-        background-image: url(https://thegiftclub.io/wp-content/uploads/2023/06/Article-thumbnail-10.gif);
-        @include backgroun-img-fix();
-        cursor: pointer;
-        transform: scale(2);
-    }
-    h1{
-        background-image: url(https://www.gifcen.com/wp-content/uploads/2023/07/neon-gif-7.gif);
-        @include backgroun-img-fix();
-        background-clip: text;
-        color: transparent;
-        font-size: 3vw;
-    }
-    
-}
-.center-r { 
-    grid-area: center-r; 
-    background-color: blue;
-    background-image: url(https://mbilal412.github.io/cohort-2.0-projects/Aicrea/asset/img1.png);
-    @include backgroun-img-fix();
-    transition: all ease 0.7s;
-    
- }
- .center-r:hover{
-    transform: scale(1.2);
-    cursor: pointer;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
-
- }
-.bottom-l { grid-area: bottom-l; 
-    
-    @include flex-column(); 
-    justify-content: space-between;
-    
-    .upper{
+        gap: 1vw;
         padding: 1vw 1vw;
-        display: flex;
-        gap: 2vw;
-        button{
-            border-radius: 14px;
-            color: white;
-            background-color: black;
-            font-size: 1.5vw;
-
-        }
-        a{
-            color: rgb(0, 0, 0);
-            font-size: 1.4vw;
-        }
     }
-    .loweer{
-        gap: 2vw;
-        @include flex-column();
-        .top{
-            padding: 1vw 1vw;
-            
-            a{
-                font-size: 1vw;
-                font-weight: 700;
-            }
-            
-        }
-        a{
-            text-decoration: none;
-            color: black;
-            font-size: 2vw;
-        }
-        
-        .bottom{
-            @include flex-center();
-            justify-content: space-between;
-            padding: 1vw 1vw;
-            a{
-                transition: all ease 0.7s;
-            }
-            a:hover{
-            color: blue;
-            font-size: 3vw;
-
-            }
-        }
-    }
-}
-.bottom-rl { grid-area: bottom-rl; background-color: violet;
-    background-image: url(https://mbilal412.github.io/cohort-2.0-projects/Aicrea/asset/img2.png);
-    @include backgroun-img-fix();
-    transition: all ease 0.7s;
-}
-.bottom-rl:hover{
-    transform: rotateY(31deg);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-    cursor: pointer;
-
-}
-.bottom-r { grid-area: bottom-r; background-color: rgb(34, 128, 175); 
-    background-image: url(https://mbilal412.github.io/cohort-2.0-projects/Aicrea/asset/img3.png);
-    @include backgroun-img-fix();
-    transition: all ease 0.7s;
-}
-.bottom-r:hover{
-    transform: rotateY(-31deg);
-     box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-    cursor: pointer;
-}
-
-}
+    
+    
 }

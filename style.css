@@ -9,241 +9,193 @@ html, body {
   width: 100%;
 }
 
-.hero {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0vw 10vw;
-}
-.hero main {
+main {
   height: 100%;
   width: 100%;
+  background-color: white;
+}
+main .hero {
+  height: 100vh;
+  width: 100vw;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.1fr 1fr 1fr;
-  grid-template-areas: "nav-l nav-m nav-m nav-r" "center-l center-l center-r center-r" "bottom-l bottom-l bottom-rl bottom-r";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "hero-l hero-r";
   gap: 1vw;
   padding: 1vh 1vw;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-  perspective: 1000px;
+  padding-top: 11vh;
 }
-.hero main .nav-l {
+main .hero .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 10vh;
+  background-color: white;
+  z-index: 1000;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "nav-l nav-c nav-r";
+  gap: 1vw;
+  padding: 1vh 1vw;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 1vw;
+}
+main .hero .nav .nav-l {
   grid-area: nav-l;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.hero main .nav-l h1 {
-  background-image: url(https://www.thisiscolossal.com/wp-content/uploads/2024/01/spherewave.gif);
-  background-position: center;
-  background-size: cover;
-  border-radius: 1vw;
-  -webkit-background-clip: text;
-          background-clip: text;
-  color: transparent;
-  transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-.hero main .nav-l h1:hover {
-  background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_632/45cd1319299489.562d80dfa5913.gif);
-  background-position: center;
-  background-size: cover;
-  border-radius: 1vw;
-}
-.hero main .nav-l .icon {
-  flex-grow: 0.5;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.hero main .nav-l .icon img {
+main .hero .nav .nav-l .svg {
   height: 100%;
-  width: 10vw;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.hero main .nav-m {
-  grid-area: nav-m;
+  flex-grow: 0.4;
+  padding: 1vh 1vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2vw;
-  overflow: auto;
 }
-.hero main .nav-m a {
-  color: black;
+main .hero .nav .nav-l .svg img {
+  height: 70%;
+  width: 70%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+main .hero .nav .nav-c {
+  grid-area: nav-c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.7vw;
+}
+main .hero .nav .nav-c a {
   text-decoration: none;
-  font-size: 1.2vw;
-  font-weight: 300px;
-  transition: all 0.7s cubic-bezier(0.215, 0.61, 0.355, 1);
+  color: rgb(0, 0, 0);
+  font-size: 1.1vw;
 }
-.hero main .nav-m a:hover {
-  color: blue;
-  font-size: 2vw;
-}
-.hero main .nav-r {
+main .hero .nav .nav-r {
   grid-area: nav-r;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2vw;
-  font-size: 2vw;
 }
-.hero main .nav-r a {
-  color: black;
-  text-decoration: none;
-  font-size: 2vw;
-  font-weight: 300px;
-  background-image: url(https://www.thisiscolossal.com/wp-content/uploads/2024/01/spherewave.gif);
-  background-position: center;
-  background-size: cover;
-  border-radius: 1vw;
-  -webkit-background-clip: text;
-          background-clip: text;
-  color: transparent;
-}
-.hero main .nav-r button {
-  background-color: black;
+main .hero .nav .nav-r button {
+  background-color: blue;
   color: white;
+  font-size: 2vw;
+  padding: 1vh 1vw;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+}
+main .hero .hero-l {
+  grid-area: hero-l;
+  background-color: lightblue;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2vw;
-  gap: 2vw;
-}
-.hero main .nav-r button i {
-  background-color: white;
-  border-radius: 50%;
-  color: black;
-  transition: all ease 0.7s;
-}
-.hero main .nav-r button i:hover {
-  font-size: 3vw;
-  cursor: pointer;
-}
-.hero main .center-l {
-  grid-area: center-l;
-  display: flex;
   flex-direction: column;
+  align-items: start;
+  border-radius: 1vw;
   gap: 3vw;
 }
-.hero main .center-l button {
-  background: linear-gradient(135deg, #ffb6c1 0%, #ff9a9e 20%, #fad0c4 40%, #a1c4fd 60%, #c2e9fb 80%, #d4a5ff 100%);
-  color: transparent;
-  height: 4vw;
-  width: 10vw;
-  border-radius: 3vw;
-  transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+main .hero .hero-l h1 {
+  font-size: 5vw;
 }
-.hero main .center-l button:hover {
-  background-image: url(https://thegiftclub.io/wp-content/uploads/2023/06/Article-thumbnail-10.gif);
-  background-position: center;
-  background-size: cover;
-  border-radius: 1vw;
-  cursor: pointer;
-  transform: scale(2);
+main .hero .hero-l P {
+  color: #F0F1F3;
 }
-.hero main .center-l h1 {
-  background-image: url(https://www.gifcen.com/wp-content/uploads/2023/07/neon-gif-7.gif);
-  background-position: center;
-  background-size: cover;
-  border-radius: 1vw;
-  -webkit-background-clip: text;
-          background-clip: text;
-  color: transparent;
-  font-size: 3vw;
-}
-.hero main .center-r {
-  grid-area: center-r;
+main .hero .hero-l .bottom button {
   background-color: blue;
-  background-image: url(https://mbilal412.github.io/cohort-2.0-projects/Aicrea/asset/img1.png);
-  background-position: center;
-  background-size: cover;
-  border-radius: 1vw;
-  transition: all ease 0.7s;
-}
-.hero main .center-r:hover {
-  transform: scale(1.2);
-  cursor: pointer;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
-}
-.hero main .bottom-l {
-  grid-area: bottom-l;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.hero main .bottom-l .upper {
-  padding: 1vw 1vw;
-  display: flex;
-  gap: 2vw;
-}
-.hero main .bottom-l .upper button {
-  border-radius: 14px;
   color: white;
-  background-color: black;
-  font-size: 1.5vw;
+  font-size: 2vw;
+  padding: 1vh 1vw;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
 }
-.hero main .bottom-l .upper a {
-  color: rgb(0, 0, 0);
-  font-size: 1.4vw;
+main .hero .hero-r {
+  grid-area: hero-r;
+  background-color: lightgreen;
+  border-radius: 1vw;
+  overflow: hidden;
 }
-.hero main .bottom-l .loweer {
-  gap: 2vw;
-  display: flex;
-  flex-direction: column;
+main .hero .hero-r video {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1vw;
 }
-.hero main .bottom-l .loweer .top {
+main .center {
+  height: 25vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "first secend third fourth";
+  gap: 1vw;
   padding: 1vw 1vw;
 }
-.hero main .bottom-l .loweer .top a {
-  font-size: 1vw;
-  font-weight: 700;
-}
-.hero main .bottom-l .loweer a {
-  text-decoration: none;
-  color: black;
-  font-size: 2vw;
-}
-.hero main .bottom-l .loweer .bottom {
+main .center .first {
+  grid-area: first;
   display: flex;
   align-items: center;
   justify-content: center;
-  justify-content: space-between;
-  padding: 1vw 1vw;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 1vh;
 }
-.hero main .bottom-l .loweer .bottom a {
-  transition: all ease 0.7s;
+main .center .first h1 {
+  font-size: 5vw;
 }
-.hero main .bottom-l .loweer .bottom a:hover {
-  color: blue;
-  font-size: 3vw;
+main .center .first h5 {
+  color: #9F9F9F;
 }
-.hero main .bottom-rl {
-  grid-area: bottom-rl;
-  background-color: violet;
-  background-image: url(https://mbilal412.github.io/cohort-2.0-projects/Aicrea/asset/img2.png);
-  background-position: center;
-  background-size: cover;
-  border-radius: 1vw;
-  transition: all ease 0.7s;
+main .center .secend {
+  grid-area: secend;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 1vh;
 }
-.hero main .bottom-rl:hover {
-  transform: rotateY(31deg);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-  cursor: pointer;
+main .center .secend h1 {
+  font-size: 5vw;
 }
-.hero main .bottom-r {
-  grid-area: bottom-r;
-  background-color: rgb(34, 128, 175);
-  background-image: url(https://mbilal412.github.io/cohort-2.0-projects/Aicrea/asset/img3.png);
-  background-position: center;
-  background-size: cover;
-  border-radius: 1vw;
-  transition: all ease 0.7s;
+main .center .secend h5 {
+  color: #9F9F9F;
 }
-.hero main .bottom-r:hover {
-  transform: rotateY(-31deg);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-  cursor: pointer;
+main .center .third {
+  grid-area: third;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 1vh;
+}
+main .center .third h1 {
+  font-size: 5vw;
+}
+main .center .third h5 {
+  color: #9F9F9F;
+}
+main .center .fourth {
+  grid-area: fourth;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 1vh;
+}
+main .center .fourth h1 {
+  font-size: 5vw;
+}
+main .center .fourth h5 {
+  color: #9F9F9F;
 }/*# sourceMappingURL=Style.css.map */
