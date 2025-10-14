@@ -5,197 +5,97 @@
 }
 
 html, body {
-  height: 100%;
   width: 100%;
+  height: 100%;
 }
 
 main {
-  height: 100%;
-  width: 100%;
-  background-color: white;
-}
-main .hero {
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: "hero-l hero-r";
-  gap: 1vw;
-  padding: 1vh 1vw;
-  padding-top: 11vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1.3fr 1fr;
+  grid-template-areas: "left left right right right" "left left right-b right-b right-b";
+  gap: 0.5vw;
+  padding: 3vh 2vw;
+  background-color: black;
 }
-main .hero .nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 10vh;
-  background-color: white;
-  z-index: 1000;
-  display: grid;
-  grid-template-columns: 0.5fr 1fr 0.5fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: "nav-l nav-c nav-r";
-  gap: 1vw;
-  padding: 1vh 1vw;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 1vw;
-}
-main .hero .nav .nav-l {
-  grid-area: nav-l;
+main .left {
+  grid-area: left;
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-main .hero .nav .nav-l .svg {
-  height: 100%;
-  flex-grow: 0.4;
-  padding: 1vh 1vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-main .hero .nav .nav-l .svg img {
-  height: 70%;
-  width: 70%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 50%;
-}
-main .hero .nav .nav-c {
-  grid-area: nav-c;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.7vw;
-}
-main .hero .nav .nav-c a {
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-  font-size: 1.1vw;
-}
-main .hero .nav .nav-r {
-  grid-area: nav-r;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-main .hero .nav .nav-r button {
-  background-color: blue;
-  color: white;
-  font-size: 2vw;
-  padding: 1vh 1vw;
-  border-radius: 20px;
-  cursor: pointer;
-  border: none;
-}
-main .hero .hero-l {
-  grid-area: hero-l;
-  background-color: lightblue;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  align-items: start;
-  border-radius: 1vw;
-  gap: 3vw;
-}
-main .hero .hero-l h1 {
-  font-size: 5vw;
-}
-main .hero .hero-l P {
-  color: #F0F1F3;
-}
-main .hero .hero-l .bottom button {
-  background-color: blue;
-  color: white;
-  font-size: 2vw;
-  padding: 1vh 1vw;
-  border-radius: 20px;
-  cursor: pointer;
-  border: none;
-}
-main .hero .hero-r {
-  grid-area: hero-r;
-  background-color: lightgreen;
-  border-radius: 1vw;
+  padding: 1vw 1vw;
   overflow: hidden;
+  border-radius: 1vw;
 }
-main .hero .hero-r video {
-  height: 100%;
+main .left img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  flex-grow: 1;
+  border-radius: 1em;
+}
+main .right {
+  grid-area: right;
+  display: flex;
+  padding: 1vw 1vw;
+  overflow: hidden;
   border-radius: 1vw;
 }
-main .center {
-  height: 25vh;
-  width: 100vw;
+main .right img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  flex-grow: 1;
+  border-radius: 1em;
+}
+main .right-b {
+  grid-area: right-b;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
-  grid-template-areas: "first secend third fourth";
-  gap: 1vw;
+  grid-template-areas: "first sec third";
+  gap: 2vw;
   padding: 1vw 1vw;
 }
-main .center .first {
+main .right-b .first {
   grid-area: first;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  padding: 1vw 1vw;
   overflow: hidden;
-  gap: 1vh;
+  border-radius: 1vw;
 }
-main .center .first h1 {
-  font-size: 5vw;
+main .right-b .first img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  flex-grow: 1;
+  border-radius: 1em;
 }
-main .center .first h5 {
-  color: #9F9F9F;
-}
-main .center .secend {
-  grid-area: secend;
+main .right-b .sec {
+  grid-area: sec;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  padding: 1vw 1vw;
   overflow: hidden;
-  gap: 1vh;
+  border-radius: 1vw;
 }
-main .center .secend h1 {
-  font-size: 5vw;
+main .right-b .sec img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  flex-grow: 1;
+  border-radius: 1em;
 }
-main .center .secend h5 {
-  color: #9F9F9F;
-}
-main .center .third {
+main .right-b .third {
   grid-area: third;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  padding: 1vw 1vw;
   overflow: hidden;
-  gap: 1vh;
+  border-radius: 1vw;
 }
-main .center .third h1 {
-  font-size: 5vw;
-}
-main .center .third h5 {
-  color: #9F9F9F;
-}
-main .center .fourth {
-  grid-area: fourth;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  overflow: hidden;
-  gap: 1vh;
-}
-main .center .fourth h1 {
-  font-size: 5vw;
-}
-main .center .fourth h5 {
-  color: #9F9F9F;
+main .right-b .third img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  flex-grow: 1;
+  border-radius: 1em;
 }/*# sourceMappingURL=Style.css.map */

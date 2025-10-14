@@ -1,204 +1,89 @@
 *{
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
+margin:0%;
+padding:0%;
+box-sizing: border-box;
 }
 html,body{
-    height: 100%;
+width: 100%;
+height: 100%;
+}
+@mixin img-fit{
     width: 100%;
-}
-@mixin flex-center{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-@mixin flex-column(){
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-@mixin img-cover(){
     object-fit: cover;
+    flex-grow: 1;
+}
+@mixin inside-box(){
+    display: flex;
+  padding: 1vw 1vw;
+  overflow: hidden;
+  border-radius: 1vw;
 }
 main{
-    height: 100%;
-    width: 100%;
-    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1.3fr 1fr;
+    grid-template-areas: "left left right right right"
+                         "left left right-b right-b right-b";
+    gap: 0.5vw;
+    padding: 3vh 2vw;
+    background-color: black;
     
-    .hero{
-        height: 100vh;
-        width: 100vw;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
-        grid-template-areas: "hero-l hero-r";
-        gap: 1vw;
-        padding: 1vh 1vw;
-        // Add padding-top to account for fixed navbar
-        padding-top: calc(10vh + 1vh); // navbar height + original padding
+    
+    .left {
         
-        //navbar - now fixed
-        .nav { 
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                height: 10vh; // Set explicit height
-                background-color: white; // Add background so content doesn't show through
-                z-index: 1000; // Keep it above other content
-                display: grid;
-                grid-template-columns: 0.5fr 1fr 0.5fr;
-                grid-template-rows: 1fr;
-                grid-template-areas: "nav-l nav-c nav-r";
-                gap: 1vw;
-                padding: 1vh 1vw;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.1); // Optional: adds subtle shadow
-                border-radius: 1vw;
-                .nav-l { 
-                    grid-area: nav-l; 
-                    @include flex-center();
-                    .svg{
-                          height: 100%;
-                          flex-grow: 0.4;
-                          padding: 1vh 1vw; 
-                          display: flex;
-                          align-items: center;
-                          justify-content: center;
-                          img{
-                            height: 70%;
-                            width: 70%;
-                            @include img-cover();
-                            border-radius: 50%;
-                          }
-                    }
-                }
-                .nav-c { grid-area: nav-c; 
-                    @include flex-center();
-                    gap: 1.7vw;
-                    a{
-                        text-decoration: none;
-                        color: rgb(0, 0, 0);
-                        font-size: 1.1vw;
-                    }
-                }
-                .nav-r { 
-                    grid-area: nav-r; 
-                    @include flex-center();
-                    button{
-                        background-color: blue;
-                        color: white;
-                        font-size: 2vw;
-                        padding: 1vh 1vw;
-                        border-radius: 20px;
-                        cursor: pointer;
-                        border: none;
-                    }
-                 }
-         }
-        .hero-l { 
-            grid-area: hero-l; 
-            background-color: lightblue;
-            @include flex-column();
-            align-items: start;
-            border-radius: 1vw;
-            gap: 3vw;
-            h1{
-                font-size: 5vw;
-            }
-            P{
-                color: #F0F1F3;
-            }
-            .bottom{
-                
-                button{
-                        background-color: blue;
-                        color: white;
-                        font-size: 2vw;
-                        padding: 1vh 1vw;
-                        border-radius: 20px;
-                        cursor: pointer;
-                        border: none;
-                    }
-            }
+    grid-area: left;
+    @include inside-box();
+    img{
+        @include img-fit();
+        border-radius: 1em;
+    }
 
-         }
-        .hero-r { 
-            grid-area: hero-r; 
-            background-color: lightgreen;
-            border-radius: 1vw;
-           
-            overflow: hidden;
-            video{
-                height: 100%;
-                width: 100%;
-                @include img-cover();
-                border-radius: 1vw;
-            }
-         } 
+  
     }
-    .center{
-        height: 25vh;
-        width: 100vw;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
-        grid-template-areas: "first secend third fourth";
-        
-        .first { 
-            grid-area: first; 
-            @include flex-column();
-            overflow: hidden;
-            gap: 1vh;
-            h1{
-                font-size: 5vw;
-            }
-            h5{
-                color: #9F9F9F;
-            }
-         }
-        .secend { 
-            grid-area: secend;
-             @include flex-column();
-            overflow: hidden;
-            gap: 1vh;
-            h1{
-                font-size: 5vw;
-            }
-            h5{
-                color: #9F9F9F;
-            }
-             
-             }
-        .third {
-            grid-area: third; 
-            @include flex-column();
-            overflow: hidden;
-            gap: 1vh;
-            h1{
-                font-size: 5vw;
-            }
-            h5{
-                color: #9F9F9F;
-            }
-             
-             }
-        .fourth { 
-            grid-area: fourth; 
-            @include flex-column();
-            
-            overflow: hidden;
-            gap: 1vh;
-            h1{
-                font-size: 5vw;
-            }
-            h5{
-                color: #9F9F9F;
-            }
-        }
-        gap: 1vw;
-        padding: 1vw 1vw;
+
+    .right {
+  grid-area: right;
+  @include inside-box();
+  img{
+    @include img-fit();
+    border-radius: 1em;
+  }
     }
-    
+
+    .right-b {
+  grid-area: right-b;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "first sec third";
+  gap: 2vw;
+  padding: 1vw 1vw;
+  .first{
+    grid-area: first;
+    @include inside-box();
+    img{
+        @include img-fit();
+        border-radius: 1em;
+    }
+  }
+  .sec{
+    grid-area: sec;
+    @include inside-box();
+    img{
+        @include img-fit();
+        border-radius: 1em;
+    }
+  }
+  .third{
+    grid-area: third;
+    @include inside-box();
+    img{
+        @include img-fit();
+        border-radius: 1em;
+    }
+  }
+    }
     
 }
